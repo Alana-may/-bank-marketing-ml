@@ -1,15 +1,12 @@
 import sklearn.utils.validation
 
-# Este bloco resolve o erro de compatibilidade entre imblearn e sklearn
 if not hasattr(sklearn.utils.validation, '_is_pandas_df'):
     def _is_pandas_df(X):
         return hasattr(X, "columns") and hasattr(X, "iloc")
     sklearn.utils.validation._is_pandas_df = _is_pandas_df
 
-# Agora sim, seguem os seus outros imports normais...
 import pandas as pd
 import seaborn as sns
-# ... o restante do seu código
 
 import pandas as pd
 import seaborn as sns
